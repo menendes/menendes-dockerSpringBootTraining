@@ -7,16 +7,10 @@ pipeline {
     }
 
     stages {
-        stage('Git pull') {
-            steps {
-                echo 'Pulling the project..'
-				git 'https://github.com/menendes/menendes-dockerSpringBootTraining'
-            }
-        }
+       
         stage('Build') {
             steps {
-                echo 'Building..'
-				sh label: '', script: 'mvn clean install'
+               sh 'mvn clean install'
             }
         }
         stage('Create Image') {
