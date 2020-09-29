@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Create Image') {
             steps {
-                echo 'Creating the image....'
+                echo 'Creating the image 047'
             }
         }
     }
