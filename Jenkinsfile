@@ -3,7 +3,7 @@ pipeline {
         docker {
             image 'maven:3-alpine' 
             args '-v /root/.m2:/root/.m2'
-            args '-v /opt/app/springboot-app:/var/jenkins_home/workspace/springBootTraining/'
+            args '-v /opt/app/springboot-app:/var/jenkins_home/workspace/springBootTraining/target'
         }
     }
 
@@ -11,6 +11,7 @@ pipeline {
        
         stage('Build') {
             steps {
+               sh 'rm -r target' 
                sh 'mvn clean install -nsu'
             }
         }
