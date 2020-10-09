@@ -2,9 +2,8 @@ pipeline {
      agent {
         docker {
             image 'maven:3-alpine' 
-            args '-u root'
             args '-v /root/.m2:/root/.m2'
-            args '-v /opt/app/springboot-app:/var/jenkins_home/workspace/springBootTraining/target'
+            args '-v /opt/app/springboot-app:/var/jenkins_home/workspace/springBootTraining/'
         }
     }
 
